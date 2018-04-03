@@ -19,22 +19,6 @@ public class Jogador : MonoBehaviour
 		}
 	}
 
-	private void FixedUpdate()
-	{
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-
-		if (Physics.Raycast(ray, out hit))
-		{
-			Debug.DrawLine(
-				Camera.main.transform.position,
-				hit.point
-			);
-
-			Debug.Log(hit.transform.name);
-		}
-	}
-
 	private void Atirar()
 	{
 		GameObject projetil = Instantiate(projetilPrefab);
