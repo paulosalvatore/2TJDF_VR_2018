@@ -1541,8 +1541,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayAndar: 1.5
-  rb: {fileID: 54844670466639376}
+  delayRecuperacao: 1
   velocidade: 0.35
+  hp: 2
+  rb: {fileID: 54844670466639376}
+  animator: {fileID: 95481852181047580}
 --- !u!136 &136615178160551164
 CapsuleCollider:
   m_ObjectHideFlags: 1

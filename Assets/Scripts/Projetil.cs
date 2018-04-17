@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Projetil : MonoBehaviour
 {
-	public float velocidade = 5f;
+    public float velocidade = 5f;
 
-	private void Start()
-	{
-		Destroy(gameObject, 5f);
-	}
+    private void Start()
+    {
+        Destroy(gameObject, 5f);
+    }
 
-	private void Update()
-	{
-		transform.Translate(transform.forward * velocidade * Time.smoothDeltaTime);
-	}
+    private void Update()
+    {
+        transform.Translate(Vector3.forward * velocidade * Time.smoothDeltaTime);
+    }
 }
