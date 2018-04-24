@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Zumbi : MonoBehaviour
 {
     [Header("Movimentação")]
     public float delayAndar = 1.5f;
+
     public float delayRecuperacao = 1f;
     public float velocidade = 0.35f;
     private bool andando = false;
@@ -17,6 +19,7 @@ public class Zumbi : MonoBehaviour
 
     [Header("Componentes")]
     public Rigidbody rb;
+
     public Animator animator;
     private GameObject jogador;
 
@@ -52,6 +55,14 @@ public class Zumbi : MonoBehaviour
                 AplicarDano();
             else
                 Matar();
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
